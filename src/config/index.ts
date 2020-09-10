@@ -82,12 +82,7 @@ module.exports = {
         enableCloudLogging: process.env.ENABLE_CLOUD_LOGGING === 'true'
     },
 
-    /**
-     * Used by AWS
-     *accessKeyId: 'AKIAUEH5UKE4WU54F55F',
-     *secretAccessKey: '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',
-     *region: 'ap-south-1'
-     */
+
     aws: {
         accessKeyId: process.env.AWS_ACCESS_KEY,
         secretAccessKey: process.env.AWS_SECRET_KEY,
