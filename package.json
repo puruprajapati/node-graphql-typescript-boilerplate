@@ -1,0 +1,89 @@
+{
+  "name": "Logistics",
+  "version": "0.0.0",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production ts-node --transpile-only src/server.ts",
+    "dev": "cross-env NODE_ENV=development nodemon --watch src --delay 1 --exec 'ts-node' src/server.ts",
+    "test": "jest --forceExit --detectOpenHandles",
+    "lint": "tslint -p tsconfig.json -c tslint.json",
+    "migrate": "yarn knex migrate:latest --knexfile src/database/knexfile.js",
+    "seed": "babel-node node_modules/.bin/knex seed:run --knexfile src/database/knexfile.js",
+    "make:seeder": "yarn knex seed:make --knexfile src/database/knexfile.js -x ts",
+    "make:migration": "yarn knex migrate:make --knexfile src/database/knexfile.js -x ts"
+  },
+  "dependencies": {
+    "@types/compression": "^1.7.0",
+    "@types/graphql": "^14.5.0",
+    "@types/graphql-depth-limit": "^1.1.2",
+    "apollo-server-express": "^2.17.0",
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "class-transformer": "^0.3.1",
+    "class-validator": "^0.12.2",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "envalid": "^6.0.2",
+    "express": "^4.17.1",
+    "graphql": "^14.0.2",
+    "graphql-depth-limit": "^1.1.0",
+    "graphql-parse-resolve-info": "^4.5.0",
+    "graphql-tools": "^4.0.3",
+    "graphql-voyager": "^1.0.0-rc.31",
+    "helmet": "^3.23.3",
+    "hpp": "^0.2.3",
+    "jest": "^26.1.0",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.2",
+    "morgan": "^1.10.0",
+    "objection": "^2.2.2",
+    "pg": "^8.3.0",
+    "swagger-jsdoc": "^4.0.0",
+    "swagger-ui-express": "^4.1.4",
+    "ts-jest": "^26.1.4",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7",
+    "winston": "^3.3.3",
+    "winston-aws-cloudwatch": "^3.0.0",
+    "winston-daily-rotate-file": "^4.5.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": ""
+    }
+  },
+  "devDependencies": {
+    "@babel/node": "^7.0.0",
+    "@types/bcrypt": "^3.0.0",
+    "@types/cookie-parser": "^1.4.2",
+    "@types/cors": "^2.8.6",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.7",
+    "@types/helmet": "0.0.47",
+    "@types/hpp": "^0.2.1",
+    "@types/jest": "^26.0.7",
+    "@types/jsonwebtoken": "^8.5.0",
+    "@types/morgan": "^1.9.1",
+    "@types/node": "^14.0.27",
+    "@types/supertest": "^2.0.10",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2",
+    "tslint": "^6.1.2",
+    "tslint-config-airbnb": "^5.11.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.evolveasia.co/ROSIA/WebApps/logistics_delivery"
+  },
+  "keywords": [
+    "NodeJS",
+    "GraphQL",
+    "TypeScript"
+  ],
+  "private": true,
+  "homepage": "https://git.evolveasia.co/ROSIA/WebApps/logistics_delivery",
+  "author": "Bibek Shah <bibek@evolveasia.co>",
+  "license": "MIT"
+}
